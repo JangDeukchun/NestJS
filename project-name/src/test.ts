@@ -61,34 +61,34 @@
 //  }
 
 
-function methodDecorator() {
-    return function (target: any, property: string, descriptor: PropertyDescriptor) {
+// function methodDecorator() {
+//     return function (target: any, property: string, descriptor: PropertyDescriptor) {
  
-       // descriptor.value는 test() 함수 자체를 가리킨다. 이 함수를 잠시 변수에 피신 시킨다.
-       let originMethod = descriptor.value; 
+//        // descriptor.value는 test() 함수 자체를 가리킨다. 이 함수를 잠시 변수에 피신 시킨다.
+//        let originMethod = descriptor.value; 
  
-       // 그리고 기존의 test() 함수의 내용을 다음과 같이 바꾼다.
-       descriptor.value = function (...args: any) {
-          console.log('before');
-          originMethod.apply(this, args); // 위에서 변수에 피신한 함수를 call,apply,bind 를 통해 호출
-          console.log('after');
-       };
-    };
- }
+//        // 그리고 기존의 test() 함수의 내용을 다음과 같이 바꾼다.
+//        descriptor.value = function (...args: any) {
+//           console.log('before');
+//           originMethod.apply(this, args); // 위에서 변수에 피신한 함수를 call,apply,bind 를 통해 호출
+//           console.log('after');
+//        };
+//     };
+//  }
  
- class Test {
-    property = 'property';
-    hello: string;
+//  class Test {
+//     property = 'property';
+//     hello: string;
  
-    constructor(m: string) {
-       this.hello = m;
-    }
+//     constructor(m: string) {
+//        this.hello = m;
+//     }
  
-    @methodDecorator()
-    test() {
-       console.log('test');
-    }
- }
+//     @methodDecorator()
+//     test() {
+//        console.log('test');
+//     }
+//  }
  
-let test = new Test("world")
-test.test()
+// let test = new Test("world")
+// test.test()
