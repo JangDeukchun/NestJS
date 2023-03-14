@@ -315,3 +315,4 @@ brewBeer.brew();
 // }
 // let person = { name: "Capt", age: 28 };
 // logAge(person);
+// 잠시 
